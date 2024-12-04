@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f4f4f4; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 0 10px; 
+        }
+
+        .container {
+            background-color: #ffffff; 
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+            width: 100%;
+            max-width: 400px; 
+        }
+        .logo-container {
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #0066cc; 
+        }
+
+        h2 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #777; 
+        }
+
+        .login-form p {
+            font-size: 16px;
+            color: #333; 
+            margin-bottom: 10px;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .input-field:focus {
+            border-color: #0066cc; 
+            outline: none;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #0066cc; 
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .login-btn:hover {
+            background-color: #005bb5; 
+        }
+
+        .forgot-password {
+            display: block;
+            margin-top: 10px;
+            color: #0066cc; 
+            text-decoration: none;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        .register-link {
+            display: block;
+            margin-top: 20px;
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .register-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 24px; /* Reduce the size of the heading for smaller screens */
+            }
+
+            h2 {
+                font-size: 16px; /* Reduce the size of the subtitle */
+            }
+
+            .input-field {
+                font-size: 14px; /* Make input fields smaller */
+            }
+
+            .login-btn {
+                font-size: 14px; /* Make button text smaller */
+            }
+
+            .forgot-password, .register-link {
+                font-size: 14px; /* Make links smaller */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <img src="./assets/brgy_logo.png" alt="Barangay Logo" class="logo">
+        </div>
+        <h1>Welcome to E-BRGYPH</h1>
+        <h2>Barangay 834 Zone 91</h2>
+        <div class="login-form">
+            <p>Log in</p>
+            <input type="text" placeholder="Username" class="input-field">
+            <input type="password" placeholder="Password" class="input-field">
+            <button class="login-btn">Log In</button>
+            <a href="#" class="forgot-password">Forgot Password</a>
+            <p>Don't have an account yet?</p>
+            <a href="#" class="register-link">Register</a>
+        </div>
+    </div>
+
+    <script>
+        // Example JavaScript code for functionality
+        const loginButton = document.querySelector('.login-btn');
+        const usernameInput = document.querySelector('input[type="text"]');
+        const passwordInput = document.querySelector('input[type="password"]');
+
+        loginButton.addEventListener('click', function() {
+            const username = usernameInput.value.trim();
+            const password = passwordInput.value.trim();
+
+            if (username && password) {
+                alert(`Logging in as ${username}`);
+            } else {
+                alert('Please fill in both fields.');
+            }
+        });
+    </script>
+</body>
+</html>

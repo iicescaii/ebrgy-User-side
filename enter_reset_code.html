@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Reset Code</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .form-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .form-container h2 {
+            color: #333;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        .message {
+            color: green;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Enter Reset Code</h2>
+
+        <!-- Reset Code Form -->
+        <form id="reset-code-form">
+            <label for="reset_code">Enter Reset Code</label>
+            <input type="text" id="reset_code" class="input-field" placeholder="Enter Reset Code" required>
+
+            <button type="submit" class="btn">Verify</button>
+        </form>
+
+        <!-- Success/Error Message -->
+        <div class="message" id="reset-message"></div>
+    </div>
+
+    <script>
+        // Handle form submission
+        document.getElementById('reset-code-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var resetCode = document.getElementById("reset_code").value;
+
+            if (!resetCode) {
+                alert("Please enter the reset code.");
+                return;
+            }
+
+            // Simulate checking the reset code (replace this with real verification logic)
+            if (resetCode === "123456") { // For demo purposes, assume "123456" is the valid code
+                document.getElementById("reset-message").textContent = "Reset code verified successfully!";
+                document.getElementById("reset-message").style.color = "green";
+
+                // Optionally, you can redirect to the page where the user sets a new password
+                setTimeout(function() {
+                    window.location.href = "set_new_password.html"; // Redirect to new password page
+                }, 2000); // 2-second delay
+            } else {
+                document.getElementById("reset-message").textContent = "Invalid reset code. Please try again.";
+                document.getElementById("reset-message").style.color = "red";
+            }
+        });
+    </script>
+
+</body>
+</html>
